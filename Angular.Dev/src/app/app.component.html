@@ -1,0 +1,11 @@
+<header class="header"></header>
+<section class="container">
+  <aside [left-panel]="sideBarData"></aside>
+  <main>
+    <button (click)="sideBarShowHide()" *ngIf="toggleBtn">Left Panel to Show/Hide </button>
+    <router-outlet />
+  </main>
+  <aside><right-panel /></aside>
+</section>
+<footer class="footer"></footer>
+
