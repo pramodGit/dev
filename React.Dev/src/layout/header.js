@@ -4,6 +4,7 @@ import ButtonAtom from "../components/buttonAtom";
 import NavBar from "./navBar";
 
 function onSearch () {
+    alert('search BITTON clicked');
 }
 
 export default function Header () {
