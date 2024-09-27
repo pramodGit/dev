@@ -1,0 +1,8 @@
+.right-panel {
+    border: 1px solid #ff0000;
+}
+.right-panel > ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
