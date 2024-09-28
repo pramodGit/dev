@@ -1,0 +1,45 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+    box-sizing: border-box;
+  }
+.container {
+    display: flex;
+    flex-direction: row;
+}
+header{
+    flex: 100%;
+}
+main {
+    flex: 64vw;
+    height: 90vh;
+    border: 2px solid #000;
+}
+.right-panel, .left-panel { width: 18vw;}
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: 800px) {
+    .container {
+        flex-direction: column;
+    }
+    .right-panel, .left-panel { width: 100%;}
+}
+
+nav {
+    border: 1px solid #3b3b3b;
+    margin: 15px 0;
+}
+nav > ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+nav > ul > li {
+    margin: 0 10px;
+}
+a {
+    cursor: pointer;
+}
+nav .control-buttons button {
+    border: 1px solid #32252b !important;
+    background-color: #32252b !important;
+}
