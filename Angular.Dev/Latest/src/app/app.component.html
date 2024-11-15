@@ -1,0 +1,18 @@
+<header class="header"></header>
+<section class="container">
+  <aside [left-panel]="sideBarData"></aside>
+  <main>
+    <button (click)="sideBarShowHide()" *ngIf="toggleBtn">Left Panel to Show/Hide </button>
+    <button (click)="onSignalClick()">Signal Click</button><br />
+    {{ clickCount() }} <br />
+    <router-outlet />
+    <app-counter-output />
+    <input type="text" #t1 />
+    <button (click)="SubmitHandle(t1)">Submit</button>
+    <app-child *ngIf="hiddenFlag" [title]="titleValue">{{titleValue}}</app-child>
+    <button (click)="HideComp()" class="btn btn-danger">Remove Component</button>
+  </main>
+  <aside><right-panel /></aside>
+</section>
+<footer class="footer"></footer>
+
