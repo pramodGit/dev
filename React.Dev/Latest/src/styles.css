@@ -11,8 +11,8 @@ header{
 }
 main {
   flex: 64vw;
-  height: 50vh;
-  // border: 2px solid #000;
+  height: 90vh;
+  border: 2px solid #000;
 }
 .right-panel, .left-panel { width: 18vw;}
 /* Responsive layout - makes a one column layout instead of a two-column layout */

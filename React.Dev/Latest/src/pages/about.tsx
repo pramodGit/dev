@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '../layout/layout';
 
-const childrenData = ["About", "Page"];
+const childrenData = ["About", " Page"];
 export default function About () {
     return (
         <>

@@ -1,7 +1,6 @@
 import React, { createContext, useContext, useState } from 'react';
 import LeftSidebar from './left-sidebar';
-import Middle from "./middle-panel"
-
+import Middle from "./middle-panel";
 
 
 export const ThemeContext = createContext();
@@ -16,9 +15,9 @@ export default function Layout(props) {
       <>
         <ThemeContext.Provider value={themeObj}>
           <section className="container">
-            {/* <ThemeContext.Provider value={themeObj}>
+            <ThemeContext.Provider value={themeObj}>
               <LeftSidebar />
-            </ThemeContext.Provider> */}
+            </ThemeContext.Provider>
             <main>
                 <Middle content={props.children} />
             </main>

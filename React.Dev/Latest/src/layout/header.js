@@ -1,11 +1,14 @@
 import React, { Component, useState, useEffect } from 'react';
 import ButtonAtom from "../components/buttonAtom";
-import NavBar from "./navBar";
+// import NavBar from "./navBar";
 import MainNavigation from "./mainNavigation";
 import NavigationDrawer from './drawer';
 
 const getLocalStorage = () => console.log(sessionStorage.getItem("logged In"));
 
+function onSearch () {
+    alert('search BITTON clicked');
+}
 export default function Header () {
     const [color, setColor] = useState("Green");
     // this effect should go into Login component
@@ -15,8 +18,8 @@ export default function Header () {
     return(
         <>
         <NavigationDrawer />
-        {/* <MainNavigation /> */}
-        {/* <nav className="header">
+        {/* <NavBar /> */}
+        <nav className="header">
             <ul>
                 <li>test useState = {color}</li>
                 <li><button
@@ -30,10 +33,10 @@ export default function Header () {
                     >Red</button>
                 </li>
                 <li>
-                    <ButtonAtom label="Get Session" bgColor={color} onClick={getLocalStorage} />
+                    <ButtonAtom label="Search" bgColor={color} onClick={onSearch} />
                 </li>
             </ul>
-        </nav>  */}
+        </nav> 
         </>
     );
 }

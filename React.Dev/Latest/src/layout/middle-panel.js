@@ -7,15 +7,15 @@ export default function Middle (props) {
     const [data, setData] = useState(props.content);
     function handleClick() {
         let temp = [...data];
-        temp.push("Singh");
+        temp.push("..Singh");
         setData(temp);
     }
     return (
         <>
         {/* {data} */}
-        {/* {props.content} */}
-        {/* <button onClick={handleClick}>{themeObj.name} : Middle Panel Button</button> */}
-        {/* <SubMiddle content={data} /> */}
+        {props.content}
+        <button onClick={handleClick}>{themeObj.name} : Middle Panel Button</button>
+        <SubMiddle content={data} />
         </>
     );
 }
