@@ -1,0 +1,14 @@
+{
+  "name": "css-dev",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "servor --reload",
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "servor": "^4.0.2",
+    "vite": "^6.0.5"
+  }
+}
