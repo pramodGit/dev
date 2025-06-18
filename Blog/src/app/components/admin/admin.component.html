@@ -1,0 +1,17 @@
+<h2>Admin Blog Panel</h2>
+
+<form (ngSubmit)="onSubmit()" #form="ngForm">
+  <input type="text" [(ngModel)]="currentPost.title" name="title" placeholder="Title" required>
+  <textarea [(ngModel)]="currentPost.summary" name="summary" placeholder="Summary" required></textarea>
+  <button type="submit">{{ editMode ? 'Update' : 'Add' }}</button>
+  <button type="button" *ngIf="editMode" (click)="resetForm()">Cancel</button>
+</form>
+
+<ul>
+  <li *ngFor="let post of blogPosts">
+    <h4>{{ post.title }}</h4>
+    <p>{{ post.summary }}</p>
+    <button (click)="onEdit(post)">Edit</button>
+    <button (click)="onDelete(post.id)">Delete</button>
+  </li>
+</ul>
