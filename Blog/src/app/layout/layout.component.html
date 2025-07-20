@@ -1,0 +1,19 @@
+<app-header />
+<!-- <nav>Breadcrumb</nav> -->
+<main>
+    <!-- <left-panel /> -->
+    <section id="middlePanel" class="middle-panel">
+        <!-- <div *ngIf="isTitleRoute()">
+            <h1>{{ title }}</h1>
+            <p>This is the homepage of your blog application.</p>
+            <a routerLink="/dashboard">Go to Blog</a>
+        </div> -->
+        <router-outlet></router-outlet>
+    </section>
+    <!-- @defer {
+        <right-panel />
+    } @placeholder {
+        <p>Loading...</p>
+    }     -->
+</main>
+<app-footer />

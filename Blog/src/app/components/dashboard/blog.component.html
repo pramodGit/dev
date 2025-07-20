@@ -1,0 +1,18 @@
+<div class="blog-container">
+  <!-- <h1 class="blog-title">
+    Latest Blog Posts
+    <a routerLink="/admin" class="admin-link">Go to Admin</a>
+  </h1> -->
+
+  <div class="blog-grid">
+    <div class="blog-post" *ngFor="let post of blogs; trackBy: trackByRoute">
+      <h1 class="post-title">{{ post.title }}</h1>
+      <p class="post-summary">{{ post.summary }}</p>
+      <a [routerLink]="['/post', post.route]" class="read-more">Read more →</a>
+    </div>
+  </div>
+  <div #anchor class="scroll-anchor"></div>
+  <div *ngIf="loading" class="loading">Loading...</div>
+  
+
+</div>
