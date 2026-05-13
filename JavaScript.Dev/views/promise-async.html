@@ -1,0 +1,34 @@
+<h2>Async and Promise</h2>
+<h3>Promise makes simple implementation of callback and provides 'then' keyword to create callback chain</h3>
+<pre>
+    const promise = new Promise((resolve, reject) => {
+        setTimeout(() => resolve(100), 300);
+    });
+    promise.then((result) => {
+        console.log(result);
+    return 200;
+    })
+    .then((result) => {
+        setTimeout(() => console.log(result), 300);
+    return 300;
+    })
+    .then((result) => console.log(result));
+</pre>
+<h3>ECMAScript 2017/ES8 introduced more simple way to implement Promise and Promise chain. Async create a function to return Promise, Await pause the execution and waits for a response from Promise.</h3>
+<pre>
+    const func = async () => {
+        let promise1 = new Promise((resolve, reject) => {
+            resolve(100);
+        });
+        let promise2 = new Promise((resolve, reject) => {
+            setTimeout(() => resolve(200), 10);
+        });
+        let promise3 = new Promise((resolve, reject) => {
+            resolve(300);
+        });
+        await console.log(promise1);
+        await console.log(promise2);
+        await console.log(promise3);
+    };
+    func();
+</pre>

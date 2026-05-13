@@ -1,0 +1,43 @@
+<h2>Typescript: Enum vs Type</h2>
+<h3>Enums: set of named values</h3>
+<pre>
+  enum BoxType1 {
+    PRIMARY = "primary",
+    INFO = "info",
+    ERROR = "error"
+  }
+  const alertBoxType1: BoxType1 = BoxType1.PRIMARY;
+  console.log(alertBoxType1); // primary
+
+  // Tranformed JavaScript code:
+  "use strict";
+  var BoxType1;
+  (function (BoxType1) {
+      BoxType1["PRIMARY"] = "primary";
+      BoxType1["INFO"] = "info";
+      BoxType1["ERROR"] = "error";
+  })(BoxType1 || (BoxType1 = {}));
+  const alertBoxType1 = BoxType1.PRIMARY;
+  console.log(alertBoxType1);
+</pre>
+<h3>For small bundle size and don't want object lookup use Union:</h3>
+<pre>
+  type BoxType2 = "primary" | "info" | "error";
+  const alertBoxType2: BoxType2 = "primary";
+  console.log(alertBoxType2); // primary
+
+  // Transformed JavaScript code:
+  const alertBoxType2 = "primary";
+  console.log(alertBoxType2);
+</pre>
+<h3>One major advantage of Enums is reverse lookup</h3>
+<pre>
+  enum HttpStatus {
+    OK = 200,
+    NOT_FOUND = 404,
+    INTERNAL_SERVER = 500,
+  }
+
+  console.log(HttpStatus.OK); // 200
+  console.log(HttpStatus[200]); // "OK"
+</pre>

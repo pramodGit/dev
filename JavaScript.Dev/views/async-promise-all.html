@@ -1,0 +1,24 @@
+<a id="promiseAsync" href="javascript:void(0)" data-include="view">&lt;-- Back</a>
+<h3>Async/await can introduce unnecessary blocking and sequential execution:</h3>
+<pre>
+    const asyncFunc = async (test) => {
+        console.log(new Date().getTime());
+        const details = await test.map(item => item + ' 10');
+        console.log(details);
+        console.log(new Date().getTime());
+      }
+      asyncFunc(['Pramod', 'Kumar']);
+</pre>
+<h3>Run Async Functions concurrently Using Promise.all:</h3>
+<pre>
+    const promiseFunc = async (test) => {
+        console.log(new Date().getTime());
+        const details = await Promise.all(
+          test.map(item => item + ' 12')  
+        );
+        console.log(details);
+        console.log(new Date().getTime());
+        return details;
+      }
+      promiseFunc(['pramod', 'Kumar']);
+</pre>

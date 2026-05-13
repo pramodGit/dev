@@ -1,0 +1,42 @@
+<h2>JavaScript design pattern is the sample boilerplate code with following benefits:</h2>
+<p>Stick to basic structures and avoid overcomplicating things.<br />
+We can add comment to make it clear what each part does.<br />
+It has defined code structure which makes developer's task easy to adopt the code.<br />
+Namespace feature can be implemented to avoid conflict error.</p>
+<h3>Factory Pattern</h3>
+<pre>
+    class FourWheeler {
+        constructor(make, model) {
+          this.make = make;
+          this.model = model;
+        }
+      }
+      class TenWheeler {
+        constructor(make, model, loadCapacity) {
+          this.make = make;
+          this.model = model;
+          this.loadCapacity = loadCapacity;
+        }
+      }
+      
+      function VehicleFactory(type, make, model, loadCapacity) {
+        const obj = {
+          SUV: () => {
+            return new FourWheeler(make, model);
+          },
+          XUV: () => {
+            return new TenWheeler(make, model, loadCapacity);
+          },
+        };
+        return obj[type] === undefined
+          ? `Invalid vehicle type: ${type}`
+          : obj[type]();
+      }
+      
+      const suv = VehicleFactory("SUV", "Toyota", "Innova");
+      console.log(suv);
+      
+      const xuv = VehicleFactory("XUV", "Toyota", "Truck", 2000);
+      console.log(xuv);
+      
+</pre>

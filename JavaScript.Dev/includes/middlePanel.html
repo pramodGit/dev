@@ -1,0 +1,13 @@
+<h3>JavaScript function add(1)(2)(3)(4)...()</h3>
+<pre>
+    const sum = function(a) {
+        return function(b) {
+          if(b) {
+            return sum(a + b);
+          }
+          return a;
+        }
+    }     
+      
+    console.log(sum(10)(5)(6)());
+</pre>
